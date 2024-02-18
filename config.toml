@@ -1,4 +1,5 @@
 title = 'UTSEUS'
+baseURL = "https://shu-utseus.github.io/"
 [module]
   [module.hugoVersion]
     extended = true
