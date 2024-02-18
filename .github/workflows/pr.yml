@@ -1,4 +1,4 @@
-name: name: pr-build-web
+name: pr-build-web
 
 on:
   push:
