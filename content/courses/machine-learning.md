@@ -1,17 +1,16 @@
 +++
-title = 'Deep-learning'
+title = 'Machine-leanring'
 date = 2024-01-14T07:07:07+01:00
-draft = false
 academic_year = '2021/2022'
 type_of_training = 'Master'
 formation = 'Undergraduate'
 spinneret = 'All'
-language = 'US'
+language = 'CN'
 category = 'OM'
 semester = 'Spring'
+draft = false
+Type = "course"
 +++
 ## Introduction
 
-This is **bold** text, and this is *emphasized* text.
-
-Visit the [Hugo](https://gohugo.io) website!
+This is a machine learning learning course.
