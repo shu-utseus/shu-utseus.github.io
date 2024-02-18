@@ -6,7 +6,7 @@
   <meta name="description"
     content="it is a description" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="/sass/main.min.ada0fb82e59886809104a81d2f944ea93c64c51854af53c7443432335e83d99e.css" />
+  <link rel="stylesheet" href="/sass/main.min.c345ae954732f6318a9bc5cbe043f22697d6a464cf0b6dc4e85b72f800438fc9.css" />
   <link rel="stylesheet" href="/css/syntax.min.f4625d0de6fb6bb0ca82f545fde88de7959b1d911cc5c2098e7accaf3bdb50e8.css" />
   
   
@@ -18,60 +18,65 @@
   
 
   
-  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Tags"/>
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Tags"/>
 <meta name="twitter:description" content="it is a description"/>
 
   <meta property="og:title" content="Tags" />
 <meta property="og:description" content="it is a description" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://example.org/tags/" />
+<meta property="og:url" content="/tags/" />
 
 
 
 </head><body>
-    <a href="#main" class="skip-to-main-content-link">Skip to main content</a><header class="header p-2">
+    <a href="#main" class="skip-to-main-content-link">Skip to main content</a><header class="header">
   <div class="header__title">
-    <p class="site-title"><a href="/">UTSEUS</a></p>
+    <a class="link" href="/">
+      <img class="img" src="/images/utseus.png" alt="utseus">
+    </a>
+  </div>
+  <div class="main-navigation">
+    <nav class="navigation">
+      <div class="main-navigation-container relative">
+        <div class="mobile-nav-close">
+          <span class="mobile-nav-close-icon"></span>
+        </div>
+        <ul class="navigation-list">
+          
+          <li class="navigation-item">
+            
+            <a aria-current="false" class="navigation-link" href="/">Home</a>
+            
+          </li>
+          <li class="navigation-item">
+            
+            <a aria-current="false" class="navigation-link" href="/about">About</a>
+            
+          </li>
+          <li class="navigation-item">
+            
+            <a aria-current="false" class="navigation-link" href="/contact">Contact</a>
+            
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div class="mobile-nav-open">
+    <span class="mobile-nav-open-icon"></span>
   </div>
 </header>
-
-<div class="p-t-l">
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-<div class="image-wpr">
-  <div class="image cover-image" srcset="/images/blog-cover.jpg"
-    style="background-image: url('/images/blog-cover.jpg');"></div>
-</div>
-  
-  
-  
-  
-</div>
 <main id="main">
         <section class="p-t-s p-b-s">
             <div class="container p-1">
-<div class="col-12"><div class="col-8 col-md-12 center">
+<div class="col-12"><div class="col-8 col-md-12 center color">
     <div class="p-1"><aside id="sidebar" class="flex flex-col justify-start p-2"><div id="search">
     <form id="search-form" class="m-b-m search-container">
         <div class="search-container-left">
             <div class="select">
                 <label class="label" for="filterOptions">Academic year:</label>
-                <select class="select-frame" id="filterOptions">
+                <select name="academic_year" class="select-frame" id="filterOptions">
                     <option value="2021/2022">2021/2022</option>
                     <option value="2022/2023">2022/2023</option>
                     <option value="2023/2024">2023/2024</option>
@@ -79,7 +84,7 @@
             </div>
             <div class="select">
                 <label class="label" for="filterOptions">Type of training:</label>
-                <select class="select-frame" id="filterOptions">
+                <select name="type_of_training" class="select-frame" id="filterOptions">
                     <option value="Alternating engineering degree">Alternating engineering degree</option>
                     <option value="Engineering Degree">Engineering Degree</option>
                     <option value="University Degree">University Degree</option>
@@ -88,18 +93,18 @@
             </div>
             <div class="select">
                 <label class="label" for="filterOptions">Formation:</label>
-                <select class="select-frame" id="filterOptions">
+                <select name="formation" class="select-frame" id="filterOptions">
                     <option value="Engineering training with a student status in Mechanics and Ergonomics">Engineering training with a student status in Mechanics and Ergonomics</option>
                     <option value="Engineering training with student status in Energy and Electrical Engineering">Engineering training with student status in Energy and Electrical Engineering</option>
                     <option value="Engineering training under Industrial Engineering student status">Engineering training under Industrial Engineering student status</option>
-                    <option value="Undergraduate [Common Core Department]">Undergraduate [Common Core Department]</option>
+                    <option value="Undergraduate">Undergraduate</option>
                     <option value="Engineering training with a student status in Mechanics">Engineering training with a student status in Mechanics</option>
                     <option value="Engineering training with a student status in Computer Science">Engineering training with a student status in Computer Science</option>
                 </select>
             </div>
             <div class="select">
                 <label class="label" for="filterOptions">Spinneret:</label>
-                <select class="select-frame" id="filterOptions">
+                <select name="spinneret" class="select-frame" id="filterOptions">
                     <option value="All">All</option>
                     <option value="Smart Building & Energy Efficiency">Smart Building & Energy Efficiency</option>
                     <option value="Electrical Power Generation">Electrical Power Generation</option>
@@ -107,66 +112,77 @@
                     <option value="Electronics & Embedded Systems">Electronics & Embedded Systems</option>
                 </select>
             </div>
-            <div class="select">
-                <label class="label" for="query">Search:</label>
-                <input class="select-frame"  type="search" name="query" id="query"
-                placeholder="Search for the name of a post, tag or category...">
-            </div>
         </div>
         <div class="search-container-right">
             <div class="select">
-                <label class="label" for="query">Language:</label>
-                <div class="language-button-container">
-                    <button class="language-button">CN</button>
-                    <button class="language-button">FR</button>
-                    <button class="language-button">US</button>
-                </div>
+                <label class="label" for="filterOptions">Language:</label>
+                <select name="language" class="select-frame" id="filterOptions">
+                    <option value="CN">CN</option>
+                    <option value="US">US</option>
+                    <option value="FR">FR</option>
+                </select>
             </div>
             <div class="select">
-                <label class="label" for="query">Category:</label>
-                <div class="category-button-container">
-                    <button class="category-button">OM</button>
-                    <button class="category-button">CS</button>
-                    <button class="category-button">QC</button>
-                    <button class="category-button">ST</button>
-                    <button class="category-button">EC</button>
-                    <button class="category-button">TM</button>
-                </div>
+                <label class="label" for="filterOptions">Category:</label>
+                <select name="category" class="select-frame" id="filterOptions">
+                    <option value="OM">OM</option>
+                    <option value="CS">CS</option>
+                    <option value="QC">QC</option>
+                    <option value="ST">ST</option>
+                    <option value="EC">EC</option>
+                    <option value="TM">TM</option>
+                </select>
             </div>
             <div class="select">
-                <label class="label" for="query">Semester:</label>
-                <div class="semester-button-container">
-                    <button class="semester-button">Spring</button>
-                    <button class="semester-button">Summer</button>
-                    <button class="semester-button">Autumn</button>
-                    <button class="semester-button">Winter</button>
-                </div>
+                <label class="label" for="filterOptions">Semester:</label>
+                <select name="semester" class="select-frame" id="filterOptions">
+                    <option value="Spring">Spring</option>
+                    <option value="Summer">Summer</option>
+                    <option value="Autumn">Autumn</option>
+                    <option value="Winter">Winter</option>
+                </select>
+            </div>
+            <div class="select">
+                <label class="label" for="query">Search:</label>
+                <input class="select-frame"  type="search" name="query" id="query"
+                placeholder="Search for the name of a course...">
             </div>
         </div>
     </form>
-    <input class="submit-button" type="submit" value="Submit" />
-    <div id="search-results"></div>
+    <input id="submit" class="submit-button" type="submit" value="Submit" />
 </div></aside></div>
-  </div><div class="col-8 col-md-12"><div class="posts p-1">
-    <ul class="posts-list">
+  </div><div class="center"><div id="course-container" class="posts p-1">
+  <table id="courseTable">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Language</th>
+        <th>Category</th>
+        <th>Formation</th>
+        <th>Spinneret</th>
+        <th>Academic year</th>
+        <th>Type of training</th>
+        <th>Semester</th>
+      </tr>
+    </thead>
+    <tbody id="search-courses">
       
-      <li>
-        <h2>No tags found</h2>
-      </li>
-      
-    </ul>
-    
+    </tbody>
+  </table>
+  
 
 
-  </div></div>
+</div></div>
 </div>
 </div>
         </section>
     </main><footer class="footer p-2">
   <p class="m-b-s">UTSEUS&nbsp;&copy 2024</p>
 </footer><script>const SITE_DATA = Object.freeze({
-            pages: "[{\"name\":\"Posts\",\"url\":\"https://example.org/post/\"},{\"name\":\"Categories\",\"url\":\"https://example.org/categories/\"},{\"name\":\"Tags\",\"url\":\"https://example.org/tags/\"}]",
+            pages: "[{\"academic_year\":\"2021/2022\",\"category\":\"OM\",\"formation\":\"Undergraduate\",\"language\":\"US\",\"name\":\"Deep-learning\",\"semester\":\"Spring\",\"spinneret\":\"All\",\"type_of_training\":\"Master\",\"url\":\"/courses/deep-learning/\"},{\"academic_year\":\"2021/2022\",\"category\":\"OM\",\"formation\":\"Undergraduate\",\"language\":\"CN\",\"name\":\"Machine-leanring\",\"semester\":\"Spring\",\"spinneret\":\"All\",\"type_of_training\":\"Master\",\"url\":\"/courses/machine-learning/\"}]",
         });
+    </script>
+    <script>console.log("所有类型和标题:", "[{\"title\":\"About\",\"type\":\"about\"},{\"title\":\"Contact\",\"type\":\"contact\"},{\"title\":\"Courses\",\"type\":\"courses\"},{\"title\":\"Deep-learning\",\"type\":\"course\"},{\"title\":\"Machine-leanring\",\"type\":\"course\"},{\"title\":\"Welcome to UTSEUS online UV guide\",\"type\":\"page\"},{\"title\":\"Categories\",\"type\":\"categories\"},{\"title\":\"Tags\",\"type\":\"tags\"}]");
     </script>
     <script src="/js/main.js"></script>
 </body>
