@@ -1,0 +1,38 @@
+<header class="header">
+  <div class="header__title">
+    <a class="link" href="{{ "" | relURL }}">
+      <img class="img" src="{{ (resources.Get "images/utseus.png").RelPermalink }}" alt="utseus">
+    </a>
+  </div>
+  {{- with .Site.Menus.main }}
+  <div class="main-navigation">
+    <nav class="navigation">
+      <div class="main-navigation-container relative">
+        <div class="mobile-nav-close">
+          <span class="mobile-nav-close-icon"></span>
+        </div>
+        <ul class="navigation-list">
+          {{ $home := $.IsHome}}
+          {{- range $item := . }}
+          <li class="navigation-item">
+            {{ if eq $.Name $item.Name }}
+            <a aria-current="page" class="navigation-link navigation-link--current" href="{{ $item.URL }}">{{ $item.Name
+              }}</a>
+            {{ else if (and ($home) (eq $item.URL "/"))}}
+            <a aria-current="page" class="navigation-link navigation-link--current" href="{{ $item.URL }}">{{ $item.Name
+              }}</a>
+            {{ else }}
+            <a aria-current="false" class="navigation-link" href="{{ $item.URL }}">{{ $item.Name }}</a>
+            {{ end }}
+          </li>
+          {{- end }}
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div class="mobile-nav-open">
+    <span class="mobile-nav-open-icon"></span>
+  </div>
+  {{- end }}
+</header>
+{{ partial "cover-image.html" . }}

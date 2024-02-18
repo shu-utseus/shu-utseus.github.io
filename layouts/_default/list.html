@@ -1,0 +1,18 @@
+{{ define "main" }}
+<div class="col-12">
+  {{- $cols := "col-12" -}}
+  {{- if $.Params.isHome -}}
+  {{- $cols = "col-8 col-md-12" -}}
+  {{- end -}}
+  {{- if $.Site.Params.usesidebar -}}
+  <div class="col-8 col-md-12 center color">
+    <div class="p-1">
+      {{- partial "sidebar.html" . -}}
+    </div>
+  </div>
+  {{- end -}}
+  <div class="center">
+    {{- partial "post-list.html" . -}}
+  </div>
+</div>
+{{ end }}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>{{ .Site.Title }} - Page not Fond</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {{ $style := resources.Get "sass/main.scss" | resources.ExecuteAsTemplate "sass/main.scss" . | resources.ToCSS |
+  resources.Minify | resources.Fingerprint -}}
+  <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
+</head>
+
+<body>
+  <a href="#main" class="skip-to-main-content-link">Skip to main content</a>
+  {{- partial "header.html" . -}}
+  <main id="main">
+    <section class="p-3">
+      <div class="_404 p-3">
+        <h1 class="_404-title m-b-m">Page Not Found</h1>
+        <p><a href="{{ "" | relURL }}">Go home</a></p>
+      </div>
+    </section>
+  </main>
+  {{- partial "footer.html" . -}}
+</body>
+</html>

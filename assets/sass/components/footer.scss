@@ -1,0 +1,13 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: rgb(62, 152, 187);
+}
+
+@media (prefers-color-scheme: dark) {
+  .footer {
+    background-color: lighten($colorBlack, 30);
+  }
+}

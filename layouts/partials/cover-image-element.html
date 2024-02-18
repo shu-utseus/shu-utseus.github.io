@@ -1,0 +1,5 @@
+{{ $image := .image }}
+<div class="image-wpr">
+  <div class="image cover-image" srcset="{{ $image.RelPermalink | safeURL }}"
+    style="background-image: url('{{ $image.RelPermalink | safeURL }}');"></div>
+</div>

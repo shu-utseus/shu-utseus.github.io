@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="{{ $.Site.Language.Lang | default "en-US" }}">
+{{- partial "head.html" . -}}
+<body>
+    <a href="#main" class="skip-to-main-content-link">Skip to main content</a>
+    {{- partial "header.html" . -}}
+    <main id="main">
+        <section class="p-t-s p-b-s">
+            <div class="container p-1">
+                {{- block "main" . }}{{- end -}}
+            </div>
+        </section>
+    </main>
+    {{- partial "footer.html" . -}}
+    {{- $js := resources.Get "js/main.js" -}}
+    <script>
+        {{- $pages := slice -}}
+        {{- range where .Site.AllPages "Type" "==" "course" -}} 
+          {{- if not .Draft -}}
+              {{- $page := dict "name" .Name
+              "url" .Permalink
+              "language" .Params.language
+              "category" .Params.category
+              "formation" .Params.formation
+              "spinneret" .Params.spinneret
+              "academic_year" .Params.academic_year
+              "type_of_training" .Params.type_of_training
+              "semester" .Params.semester -}}
+              {{- $pages = append $page $pages -}}
+          {{- end -}}
+        {{- end -}} 
+        const SITE_DATA = Object.freeze({
+            pages: {{ jsonify $pages }},
+        });
+    </script>
+    <script>
+        {{- $pageInfo := slice -}}
+        {{- range .Site.AllPages -}}
+            {{- if and (not .Draft) (not (in .Type $pageInfo)) -}}
+                {{- $info := dict "title" .Title "type" .Type -}}
+                {{- $pageInfo = $pageInfo | append $info -}}
+            {{- end -}}
+        {{- end -}}
+        console.log("所有类型和标题:", {{ jsonify $pageInfo }});
+    </script>
+    <script src="{{ $js.RelPermalink }}"></script>
+</body>
+
+</html>

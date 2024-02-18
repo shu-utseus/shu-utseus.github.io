@@ -1,4 +1,36 @@
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
 title = 'UTSEUS'
-theme = "spaced-blog"
+[module]
+  [module.hugoVersion]
+    extended = true
+    min = "0.55.0"
+[params]
+  description = "it is a description"
+  useCover = true
+  useSidebar = true
+
+[params.colors]
+  black = "#222222"
+  white = "#fafafa"
+  grey = "#dcdde1"
+  red = "#e84118"
+  blue = "#00a8ff"
+  green = "#4cd137"
+  yellow = "#fbc531"
+  purple = "#9c88ff"
+
+  [menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about"
+    weight = 2
+  [[menu.main]]
+    identifier = "contact"
+    name = "Contact"
+    url = "/contact"
+    weight = 3

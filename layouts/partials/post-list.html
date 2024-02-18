@@ -1,0 +1,31 @@
+<div id="course-container" class="posts p-1">
+  <table id="courseTable">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Language</th>
+        <th>Category</th>
+        <th>Formation</th>
+        <th>Spinneret</th>
+        <th>Academic year</th>
+        <th>Type of training</th>
+        <th>Semester</th>
+      </tr>
+    </thead>
+    <tbody id="search-courses">
+      {{ range where .Paginator.Pages "Type" "==" "course" }}
+      <tr>
+        <td><a href="{{ .Permalink }}">{{ .Title }}</a></td>
+        <td>{{ .Params.language }}</td>
+        <td>{{ .Params.category }}</td>
+        <td>{{ .Params.formation }}</td>
+        <td>{{ .Params.spinneret }}</td>
+        <td>{{ .Params.academic_year }}</td>
+        <td>{{ .Params.type_of_training }}</td>
+        <td>{{ .Params.semester }}</td>
+      </tr>
+      {{ end }}
+    </tbody>
+  </table>
+  {{ partial "pagination.html" . }}
+</div>
