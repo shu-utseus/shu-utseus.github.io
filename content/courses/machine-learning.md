@@ -13,4 +13,4 @@ Type = "course"
 +++
 ## Introduction
 
-This is a machine learning learning course.
+This is a machine learning course.
