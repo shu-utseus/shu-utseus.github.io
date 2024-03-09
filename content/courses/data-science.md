@@ -5,7 +5,7 @@ draft: false
 academic_year: '2021/2022'
 type_of_training: 'Master'
 formation: 'Undergraduate'
-spinneret: 'All'
+spinneret: 'Machine Leaning & AI'
 language: 'US'
 category: 'OM'
 semester: 'Spring'

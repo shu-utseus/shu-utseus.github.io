@@ -33,17 +33,27 @@ window.addEventListener("DOMContentLoaded", () => {
       console.log('f',formData);
       const pages = JSON.parse(SITE_DATA.pages);
       console.log(pages);
-      const results =
-        Array.from(pages)?.filter((page) =>
-          page.name.toLowerCase().includes(formData.query.toLowerCase())&&
-          page.academic_year === formData.academic_year&&
-          page.category === formData.category&&
-          page.formation === formData.formation&&
-          page.spinneret === formData.spinneret&&
-          page.language === formData.language&&
-          page.type_of_training === formData.type_of_training&&
-          page.semester === formData.semester
-        ) || [];
+      const results = Array.from(pages)?.filter((page) => {
+        const isQueryMatched = page.name.toLowerCase().includes(formData.query.toLowerCase());
+        const isAcademicYearMatched = formData.academic_year === "All" || page.academic_year === formData.academic_year;
+        const isCategoryMatched = formData.category === "All" || page.category === formData.category;
+        const isFormationMatched = formData.formation === "All" || page.formation === formData.formation;
+        const isSpinneretMatched = formData.spinneret === "All" || page.spinneret === formData.spinneret;
+        const isLanguageMatched = formData.language === "All" || page.language === formData.language;
+        const isTypeOfTrainingMatched = formData.type_of_training === "All" || page.type_of_training === formData.type_of_training;
+        const isSemesterMatched = formData.semester === "All" || page.semester === formData.semester;
+      
+        return (
+          isQueryMatched &&
+          isAcademicYearMatched &&
+          isCategoryMatched &&
+          isFormationMatched &&
+          isSpinneretMatched &&
+          isLanguageMatched &&
+          isTypeOfTrainingMatched &&
+          isSemesterMatched
+        );
+      }) || [];
       console.log('results', results);
       if (results.length > 0) {
         const markup = results.map((result) => searchResult(result));
